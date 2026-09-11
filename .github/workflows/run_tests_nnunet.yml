@@ -48,4 +48,4 @@ jobs:
         pip install ".[intel_macos]"
 
     - name: Run test script
-      run: python nnunetv2/tests/integration_tests/run_nnunet_inference.py
+      run: python nncpunet/tests/integration_tests/run_nnunet_inference.py

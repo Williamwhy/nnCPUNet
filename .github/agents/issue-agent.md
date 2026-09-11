@@ -106,30 +106,30 @@ postprocessing to any new dataset.
 - `documentation/inference_instructions.md` — running inference on new data
 
 ### Entry Points (read these for CLI / usage bugs)
-- `nnunetv2/run/run_training.py` — `nnUNetv2_train` CLI entrypoint
-- `nnunetv2/inference/predict_from_raw_data.py` — `nnUNetv2_predict` CLI entrypoint
-- `nnunetv2/experiment_planning/plan_and_preprocess_api.py` — `nnUNetv2_plan_and_preprocess`
-- `nnunetv2/experiment_planning/verify_dataset_integrity.py` — dataset validation
+- `nncpunet/run/run_training.py` — `nnUNetv2_train` CLI entrypoint
+- `nncpunet/inference/predict_from_raw_data.py` — `nnUNetv2_predict` CLI entrypoint
+- `nncpunet/experiment_planning/plan_and_preprocess_api.py` — `nnUNetv2_plan_and_preprocess`
+- `nncpunet/experiment_planning/verify_dataset_integrity.py` — dataset validation
 
 ### Core Pipeline (read these for training / architecture bugs)
-- `nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py` — base trainer class, training loop, device handling
-- `nnunetv2/training/nnUNetTrainer/variants/` — specialized trainers (cascade, low-res, etc.)
-- `nnunetv2/preprocessing/` — resampling, normalization, cropping logic
-- `nnunetv2/architecture/` — network architecture definitions
-- `nnunetv2/postprocessing/` — postprocessing and ensembling
+- `nncpunet/training/nnUNetTrainer/nnUNetTrainer.py` — base trainer class, training loop, device handling
+- `nncpunet/training/nnUNetTrainer/variants/` — specialized trainers (cascade, low-res, etc.)
+- `nncpunet/preprocessing/` — resampling, normalization, cropping logic
+- `nncpunet/architecture/` — network architecture definitions
+- `nncpunet/postprocessing/` — postprocessing and ensembling
 
 ### Configuration (read these for path / config issues)
-- `nnunetv2/configuration.py` — global defaults
-- `nnunetv2/paths.py` — path resolution logic
+- `nncpunet/configuration.py` — global defaults
+- `nncpunet/paths.py` — path resolution logic
 - `setup.py` / `pyproject.toml` — installation and dependencies
 
 ### Common Issue Areas
 - **Installation failures** → `setup.py`, `pyproject.toml`, `documentation/how_to_use_nnunet.md`
 - **CUDA / GPU errors** → `nnUNetTrainer.py` (device handling), check PyTorch version compatibility
 - **Dataset format errors** → `documentation/dataset_format.md`, `verify_dataset_integrity.py`
-- **Path not found / env vars** → `nnunetv2/paths.py`, `documentation/setting_up_paths.md`
-- **Postprocessing questions** → `nnunetv2/postprocessing/`
-- **Custom trainer questions** → `nnunetv2/training/nnUNetTrainer/variants/`
+- **Path not found / env vars** → `nncpunet/paths.py`, `documentation/setting_up_paths.md`
+- **Postprocessing questions** → `nncpunet/postprocessing/`
+- **Custom trainer questions** → `nncpunet/training/nnUNetTrainer/variants/`
 - **2D / 3D config questions** → `documentation/explanation_plans_files.md`
 
 ## Workflow

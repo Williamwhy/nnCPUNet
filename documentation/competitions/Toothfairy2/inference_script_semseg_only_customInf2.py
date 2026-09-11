@@ -6,19 +6,19 @@ from pathlib import Path
 from typing import Union, Tuple
 import warnings
 
-import nnunetv2
+import nncpunet
 import numpy as np
 import torch
 from acvl_utils.cropping_and_padding.bounding_boxes import bounding_box_to_slice
 from acvl_utils.cropping_and_padding.padding import pad_nd_image
 from batchgenerators.utilities.file_and_folder_operations import load_json, join
-from nnunetv2.imageio.simpleitk_reader_writer import SimpleITKIO
-from nnunetv2.inference.predict_from_raw_data import nnUNetPredictor
-from nnunetv2.inference.sliding_window_prediction import compute_gaussian
-from nnunetv2.utilities.find_class_by_name import recursive_find_python_class
-from nnunetv2.utilities.helpers import empty_cache
-from nnunetv2.utilities.label_handling.label_handling import determine_num_input_channels
-from nnunetv2.utilities.plans_handling.plans_handler import PlansManager
+from nncpunet.imageio.simpleitk_reader_writer import SimpleITKIO
+from nncpunet.inference.predict_from_raw_data import nnUNetPredictor
+from nncpunet.inference.sliding_window_prediction import compute_gaussian
+from nncpunet.utilities.find_class_by_name import recursive_find_python_class
+from nncpunet.utilities.helpers import empty_cache
+from nncpunet.utilities.label_handling.label_handling import determine_num_input_channels
+from nncpunet.utilities.plans_handling.plans_handler import PlansManager
 from torch._dynamo import OptimizedModule
 from tqdm import tqdm
 
@@ -85,10 +85,10 @@ class CustomPredictor(nnUNetPredictor):
         configuration_manager = plans_manager.get_configuration(configuration_name)
         # restore network
         num_input_channels = determine_num_input_channels(plans_manager, configuration_manager, dataset_json)
-        trainer_class = recursive_find_python_class(join(nnunetv2.__path__[0], "training", "nnUNetTrainer"),
-                                                    trainer_name, 'nnunetv2.training.nnUNetTrainer')
+        trainer_class = recursive_find_python_class(join(nncpunet.__path__[0], "training", "nnUNetTrainer"),
+                                                    trainer_name, 'nncpunet.training.nnUNetTrainer')
         if trainer_class is None:
-            raise RuntimeError(f'Unable to locate trainer class {trainer_name} in nnunetv2.training.nnUNetTrainer. '
+            raise RuntimeError(f'Unable to locate trainer class {trainer_name} in nncpunet.training.nnUNetTrainer. '
                                f'Please place it there (in any .py file)!')
         num_output_channels = plans_manager.get_label_manager(dataset_json).num_segmentation_heads
         sig = inspect.signature(trainer_class.build_network_architecture)

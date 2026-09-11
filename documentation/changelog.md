@@ -3,7 +3,7 @@
 - We now support **hierarchical labels** (named regions in nnU-Net). For example, instead of training BraTS with the
 'edema', 'necrosis' and 'enhancing tumor' labels you can directly train it on the target areas 'whole tumor',
 'tumor core' and 'enhancing tumor'. See [here](region_based_training.md) for a detailed description + also have a look at the
-[BraTS 2021 conversion script](../nnunetv2/dataset_conversion/Dataset137_BraTS21.py).
+[BraTS 2021 conversion script](../nncpunet/dataset_conversion/Dataset137_BraTS21.py).
 - Cross-platform support. Cuda, mps (Apple M1/M2) and of course CPU support! Simply select the device with
 `-device` in `nnUNetv2_train` and `nnUNetv2_predict`.
 - Unified trainer class: nnUNetTrainer. No messing around with cascaded trainer, DDP trainer, region-based trainer,

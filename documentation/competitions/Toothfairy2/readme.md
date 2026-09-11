@@ -16,7 +16,7 @@ mirroring and train for 1500 instead of the standard 1000 epochs. Training was e
 # Dataset Conversion
 
 # Experiment Planning and Preprocessing
-Adapt and run the [dataset conversion script](../../../nnunetv2/dataset_conversion/Dataset119_ToothFairy2_All.py).
+Adapt and run the [dataset conversion script](../../../nncpunet/dataset_conversion/Dataset119_ToothFairy2_All.py).
 This script just converts the mha files to nifti (smaller file size) and removes the unused label ids.
 
 ## Extract fingerprint:

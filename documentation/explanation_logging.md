@@ -7,7 +7,7 @@ Prefer the migrated reference page for the recommended path:
 ## Introduction
 
 Logging in nnU-Net is intentionally simple and centralized in
-`nnunetv2/training/logging/nnunet_logger.py`.
+`nncpunet/training/logging/nnunet_logger.py`.
 
 The trainer talks to one object, `MetaLogger`, and `MetaLogger` fans out logs to:
 

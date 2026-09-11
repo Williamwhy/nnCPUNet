@@ -23,7 +23,7 @@ We recommend you use the latest nnU-Net version as well! We ran our trainings wi
 
 ### Download and convert the data
 1. Download and extract the AutoPET II dataset
-2. Convert it to nnU-Net format by running `python nnunetv2/dataset_conversion/Dataset221_AutoPETII_2023.py FOLDER` where folder is the extracted AutoPET II dataset.
+2. Convert it to nnU-Net format by running `python nncpunet/dataset_conversion/Dataset221_AutoPETII_2023.py FOLDER` where folder is the extracted AutoPET II dataset.
 
 ### Experiment planning and preprocessing
 We deviate a little from the standard nnU-Net procedure because all our experiments are based on just the 3d_fullres configuration

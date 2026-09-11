@@ -178,26 +178,26 @@ nnU-Net is a self-configuring framework for medical image segmentation.
 - `documentation/inference_instructions.md` — running inference
 
 ### Entry Points
-- `nnunetv2/run/run_training.py` — `nnUNetv2_train` CLI
-- `nnunetv2/inference/predict_from_raw_data.py` — `nnUNetv2_predict` CLI
-- `nnunetv2/experiment_planning/plan_and_preprocess_api.py` — `nnUNetv2_plan_and_preprocess`
-- `nnunetv2/experiment_planning/verify_dataset_integrity.py` — dataset validation
+- `nncpunet/run/run_training.py` — `nnUNetv2_train` CLI
+- `nncpunet/inference/predict_from_raw_data.py` — `nnUNetv2_predict` CLI
+- `nncpunet/experiment_planning/plan_and_preprocess_api.py` — `nnUNetv2_plan_and_preprocess`
+- `nncpunet/experiment_planning/verify_dataset_integrity.py` — dataset validation
 
 ### Core Pipeline
-- `nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py` — base trainer, training loop
-- `nnunetv2/training/nnUNetTrainer/variants/` — specialized trainers
-- `nnunetv2/preprocessing/` — resampling, normalization, cropping
-- `nnunetv2/architecture/` — network architecture definitions
-- `nnunetv2/postprocessing/` — postprocessing and ensembling
+- `nncpunet/training/nnUNetTrainer/nnUNetTrainer.py` — base trainer, training loop
+- `nncpunet/training/nnUNetTrainer/variants/` — specialized trainers
+- `nncpunet/preprocessing/` — resampling, normalization, cropping
+- `nncpunet/architecture/` — network architecture definitions
+- `nncpunet/postprocessing/` — postprocessing and ensembling
 
 ### Configuration
-- `nnunetv2/configuration.py` — global defaults
-- `nnunetv2/paths.py` — path resolution
+- `nncpunet/configuration.py` — global defaults
+- `nncpunet/paths.py` — path resolution
 - `setup.py` / `pyproject.toml` — installation and dependencies
 
 ### High-Risk Areas (review with extra care)
-- `nnunetv2/preprocessing/resampling/` — interpolation, coordinate transforms
-- `nnunetv2/preprocessing/normalization/` — intensity normalization
-- `nnunetv2/training/loss/` — loss function computation
-- `nnunetv2/postprocessing/` — connected component removal, ensembling
-- `nnunetv2/imageio/` — medical image I/O, metadata handling
+- `nncpunet/preprocessing/resampling/` — interpolation, coordinate transforms
+- `nncpunet/preprocessing/normalization/` — intensity normalization
+- `nncpunet/training/loss/` — loss function computation
+- `nncpunet/postprocessing/` — connected component removal, ensembling
+- `nncpunet/imageio/` — medical image I/O, metadata handling

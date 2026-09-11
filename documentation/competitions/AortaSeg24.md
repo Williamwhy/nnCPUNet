@@ -10,7 +10,7 @@ Helmholtz Imaging
 # Introduction
 
 This document describes our submission to the [AortaSeg24 Challenge](https://aortaseg24.grand-challenge.org/).
-Our model is essentially a nnU-Net ResEnc L with modified data augmentation. We disable left/right mirroring and use the heavy data augmentation [DA5 Trainer](../../nnunetv2/training/nnUNetTrainer/variants/data_augmentation/nnUNetTrainerDA5.py). Training was performed on an A100 40GB GPU.
+Our model is essentially a nnU-Net ResEnc L with modified data augmentation. We disable left/right mirroring and use the heavy data augmentation [DA5 Trainer](../../nncpunet/training/nnUNetTrainer/variants/data_augmentation/nnUNetTrainerDA5.py). Training was performed on an A100 40GB GPU.
 
 # Experiment Planning and Preprocessing
 After converting the data into the [nnUNet format](../dataset_format.md) (either keep and just rename the .mha files or convert them to .nii.gz), you can run the preprocessing:

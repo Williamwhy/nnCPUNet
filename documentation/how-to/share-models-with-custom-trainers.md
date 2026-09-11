@@ -5,7 +5,7 @@ importable on any machine that runs inference or continues training from your ch
 This page covers the four ways to make that happen and when each option makes sense.
 
 nnU-Net resolves the trainer class by name from `checkpoint["trainer_name"]`. The resolver
-first looks inside `nnunetv2.training.nnUNetTrainer`; if it does not find the class there
+first looks inside `nncpunet.training.nnUNetTrainer`; if it does not find the class there
 and the `nnUNet_extTrainer` environment variable is set, it also searches the directories
 listed in that variable. If neither lookup succeeds, inference and training fail.
 
@@ -88,7 +88,7 @@ $Env:nnUNet_extTrainer = "C:/opt/my_custom_trainers"
 Notes:
 
 - The built-in search runs first. External paths are only consulted if the trainer is
-  not found inside `nnunetv2.training.nnUNetTrainer`.
+  not found inside `nncpunet.training.nnUNetTrainer`.
 - The trainer class must still be a subclass of `nnUNetTrainer`. This is enforced.
 - Any `import`s the trainer makes from your package must be resolvable under the
   directory you set, which is why pointing at the parent of a package (as in the
@@ -97,7 +97,7 @@ Notes:
 ## 3. Editable install plus the trainer copied into the source tree
 
 Users install nnU-Net with `pip install -e .` and then drop the trainer file into
-`nnunetv2/training/nnUNetTrainer/` (or a subfolder of it).
+`nncpunet/training/nnUNetTrainer/` (or a subfolder of it).
 
 **When to use**
 - You want to distribute a full development environment in which users can modify and

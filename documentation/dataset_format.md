@@ -32,7 +32,7 @@ The dataset.json file connects channel names with the channel identifiers in the
 
 Side note: Typically, each channel/modality needs to be stored in a separate file and is accessed with the XXXX channel identifier.
 Exception are natural images (RGB; .png) where the three color channels can all be stored in one file (see the
-[road segmentation](../nnunetv2/dataset_conversion/Dataset120_RoadSegmentation.py) dataset as an example).
+[road segmentation](../nncpunet/dataset_conversion/Dataset120_RoadSegmentation.py) dataset as an example).
 
 **Segmentations** must share the same geometry with their corresponding images (same shape etc.). Segmentations are
 integer maps with each value representing a semantic class. The background must be 0. If there is no background, then
@@ -53,7 +53,7 @@ is thus not possible to train .png and then run inference on .jpg.
 One big change in nnU-Net V2 is the support of multiple input file types. Gone are the days of converting everything to .nii.gz!
 This is implemented by abstracting the input and output of images + segmentations through `BaseReaderWriter`. nnU-Net
 comes with a broad collection of Readers+Writers and you can even add your own to support your data format!
-See [here](../nnunetv2/imageio/readme.md).
+See [here](../nncpunet/imageio/readme.md).
 
 As a nice bonus, nnU-Net now also natively supports 2D input images and you no longer have to mess around with
 conversions to pseudo 3D niftis. Yuck. That was disgusting.
@@ -104,7 +104,7 @@ Within each dataset folder, the following structure is expected:
     └── labelsTr
 
 
-When adding your custom dataset, take a look at the [dataset_conversion](../nnunetv2/dataset_conversion) folder and
+When adding your custom dataset, take a look at the [dataset_conversion](../nncpunet/dataset_conversion) folder and
 pick an id that is not already taken. IDs 001-010 are for the Medical Segmentation Decathlon.
 
 - **imagesTr** contains the images belonging to the training cases. nnU-Net will perform pipeline configuration, training with
@@ -203,8 +203,8 @@ be used with this dataset. If not provided, nnU-Net will automatically determine
 - "regions_class_order" only used in [region-based training](region_based_training.md)
 
 There is a utility with which you can generate the dataset.json automatically. You can find it
-[here](../nnunetv2/dataset_conversion/generate_dataset_json.py).
-See our examples in [dataset_conversion](../nnunetv2/dataset_conversion) for how to use it. And read its documentation!
+[here](../nncpunet/dataset_conversion/generate_dataset_json.py).
+See our examples in [dataset_conversion](../nncpunet/dataset_conversion) for how to use it. And read its documentation!
 
 As described above, a json file that contains spacing information is required for TIFF files.
 An example for a 3D TIFF stack with units corresponding to 7.6 in x and y, 80 in z is:
@@ -242,7 +242,7 @@ See [convert_msd_dataset.md](convert_msd_dataset.md)
 
 ## How to use 2D data with nnU-Net
 2D is now natively supported (yay!). See [here](#supported-file-formats) as well as the example dataset in this
-[script](../nnunetv2/dataset_conversion/Dataset120_RoadSegmentation.py).
+[script](../nncpunet/dataset_conversion/Dataset120_RoadSegmentation.py).
 
 
 ## How to update an existing dataset
@@ -251,7 +251,7 @@ to ensure a fresh start. Then replace the data in `nnUNet_raw` and rerun `nnUNet
 also remove the results from old trainings.
 
 # Example dataset conversion scripts
-In the `dataset_conversion` folder (see [here](../nnunetv2/dataset_conversion)) are multiple example scripts for
+In the `dataset_conversion` folder (see [here](../nncpunet/dataset_conversion)) are multiple example scripts for
 converting datasets into nnU-Net format. These scripts cannot be run as they are (you need to open them and change
 some paths) but they are excellent examples for you to learn how to convert your own datasets into nnU-Net format.
 Just pick the dataset that is closest to yours as a starting point.

@@ -142,7 +142,7 @@ Controls the target spacing used to preprocess the downstream data:
 
 Selected with `-tr`. Each family also ships preset variants (e.g. `_150ep`, `_300ep`,
 `_nomirroring`, `_smallerlr`, Adam-based variants). Run the command and look at the
-class names in `nnunetv2/training/nnUNetTrainer/pretraining/` for the full list.
+class names in `nncpunet/training/nnUNetTrainer/pretraining/` for the full list.
 
 - `PretrainedTrainer`. Base finetuning trainer (CNN / ResEnc checkpoints), warmup → train
   schedule.

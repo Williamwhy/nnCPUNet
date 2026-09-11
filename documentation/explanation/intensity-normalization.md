@@ -42,7 +42,7 @@ For `CT`, nnU-Net computes foreground intensity statistics over the training set
 
 To add your own normalization strategy:
 
-1. Implement a new class in `nnunetv2.preprocessing.normalization`
+1. Implement a new class in `nncpunet.preprocessing.normalization`
 2. Register it in `map_channel_name_to_normalization.py`
 3. Use the associated channel name in `dataset.json`
 

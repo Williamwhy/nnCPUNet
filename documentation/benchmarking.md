@@ -46,7 +46,7 @@ If you want to inspect the outcome manually, check (for example!) your
 Note that there can be multiple entries in this file if the benchmark was run on different GPU types, torch versions or cudnn versions!
 
 If you want to summarize your results like we did in our [results](#results), check the
-[summary script](../nnunetv2/batch_running/benchmarking/summarize_benchmark_results.py). Here you need to change the
+[summary script](../nncpunet/batch_running/benchmarking/summarize_benchmark_results.py). Here you need to change the
 torch version, cudnn version and dataset you want to summarize, then execute the script. You can find the exact
 values you need to put there in one of your `benchmark_result.json` files.
 
