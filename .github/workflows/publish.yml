@@ -25,6 +25,7 @@ jobs:
       # Required for PyPI Trusted Publishing (OIDC). This is what lets the job
       # mint a short-lived token instead of using a stored secret.
       id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v4
 
